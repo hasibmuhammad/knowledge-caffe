@@ -8,8 +8,10 @@ function App() {
   const [readingTimes, setReadingTimes] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
 
-  const handleMarkAsRead = (currentReadingTime) => {
+  const handleMarkAsRead = (currentReadingTime, id) => {
     setReadingTimes([...readingTimes, currentReadingTime]);
+
+    setBookmarks(bookmarks.filter((bk) => bk.id !== id));
   };
 
   const handleBookmark = (blog) => {

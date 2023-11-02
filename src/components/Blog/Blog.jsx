@@ -57,8 +57,9 @@ const Blog = ({ blog, handleMarkAsRead, handleBookmark }) => {
             marked && "pointer-events-none text-gray-300"
           }`}
           onClick={() => {
-            handleMarkAsRead(blog.reading_time);
+            handleMarkAsRead(blog.reading_time, blog.id);
             setMarked(true);
+            setBookmark(false);
           }}
         >
           Mark as read
